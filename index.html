@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chúc Mừng Ngày 20/10 💖</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chúc mừng 20/10 💐</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <audio id="bg-music" src="Gui-Nhung-Nguoi-Phu-Nu-Toi-Yeu-Quang-Vinh-Various-Artists.mp3" loop autoplay></audio>
+  <audio id="bg-music" autoplay loop playsinline>
+    <source src="music.mp3" type="audio/mp3" />
+  </audio>
 
-  <div id="greeting-screen">
-    <h1 class="title">🌸 Chúc Mừng Ngày Phụ Nữ Việt Nam 20/10 🌸</h1>
-    <p class="message">
-      💕 Chúc bạn có một ngày thật rực rỡ, tươi đẹp như chính nụ cười của bạn 💕<br>
-      🌷 Mong mọi điều tốt lành, hạnh phúc và yêu thương luôn bên bạn! 🌷
-    </p>
+  <div class="container">
+    <h1 class="title">💐 Chúc mừng ngày Phụ Nữ Việt Nam 20/10 💐</h1>
+    <p class="message">Chúc bạn luôn xinh đẹp, rạng rỡ và hạnh phúc như những đóa hoa nhé! 🌸💖</p>
   </div>
 
-  <div class="flowers"></div>
+  <canvas id="fallingFlowers"></canvas>
+  <div id="hearts"></div>
 
   <script src="script.js"></script>
 </body>

@@ -67,3 +67,14 @@ window.addEventListener('load', () => {
     });
   }
 });
+
+// Tự động bật nhạc (một số trình duyệt yêu cầu tương tác)
+document.getElementById("music-btn").addEventListener("click", () => {
+    const music = document.getElementById("bg-music");
+    music.volume = 0.8;
+    music.play();
+  });
+  
+
+
+

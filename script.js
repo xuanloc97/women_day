@@ -54,28 +54,16 @@ setInterval(() => {
   setTimeout(() => heart.remove(), 6000);
 }, 400);
 
-// --- Auto bật nhạc an toàn ---
-window.addEventListener('load', async () => {
+// Auto bật nhạc luôn
+window.addEventListener('load', () => {
   const music = document.getElementById('bg-music');
   music.volume = 0.7;
-
-  try {
-    // Phát nhạc mute trước
-    music.muted = true;
-    await music.play();
-    // Sau 1 giây bật lại tiếng
-    setTimeout(() => {
-      music.muted = false;
-    }, 1000);
-  } catch (err) {
-    console.warn('Autoplay bị chặn. Sẽ thử lại sau tương tác đầu tiên.');
-    // Nếu bị chặn, phát lại sau lần click đầu tiên
-    const resume = async () => {
-      try {
-        await music.play();
-        document.removeEventListener('click', resume);
-      } catch (e) {}
-    };
-    document.addEventListener('click', resume);
+  const playPromise = music.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(() => {
+      music.muted = true;
+      music.play();
+      setTimeout(() => music.muted = false, 500);
+    });
   }
 });
